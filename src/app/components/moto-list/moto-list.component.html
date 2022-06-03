@@ -1,0 +1,57 @@
+<img class="background"
+  src="https://img.freepik.com/free-photo/crumpled-white-aluminium-foil-background_23-2148722090.jpg?w=2000"
+  alt="background-image">
+
+<div class="container" style="opacity: 1;">
+
+  <div class="d-flex align-items-center">
+    <img styel="max-width: 50px; height: auto;" src="../../../assets/th-removebg-preview.png" alt="eagle motors">
+    <h1 style="font-weight: 900;" class="text-warning display-1">Eagle motors</h1>
+  </div>
+
+  <button [routerLink]="['/marque']" class="btn btn-warning me-1">Triée par marque</button>
+  <button [routerLink]="['/type']" class="btn btn-warning ms-1">Triée par type</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Type</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Cylindrée</th>
+        <th scope="col">Vente Flash</th>
+        <th scope="col">Année</th>
+        <th scope="col">Kilomètres</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let moto of motoTable">
+
+        <th scope="row">{{moto.nom}}</th>
+        <td class="td-image"><img style="max-height: 75px; max-width: 75px; z-index: 20; opacity: 1;"
+            src="{{moto.image}}" alt="Portrait de la moto"></td>
+        <td>{{moto.marque}}</td>
+        <td>{{moto.type}}</td>
+        <td>{{moto.prix}}</td>
+        <td>{{moto.cylindree}}</td>
+
+        <td>
+          <p *ngIf="moto.venteFlash==true">Oui</p>
+          <p *ngIf="moto.venteFlash==false">Non</p>
+        </td>
+
+        <td>{{moto.annee}}</td>
+        <td>{{moto.kilometres}}</td>
+        <td>
+          <div class="d-flex flex-column">
+            <button [routerLink]="['/'+moto.id]" class="btn btn-success" style="z-index: 20; opacity: 1;">En
+              détail</button>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

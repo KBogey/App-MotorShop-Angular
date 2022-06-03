@@ -1,0 +1,93 @@
+<img class="background" src="https://img.freepik.com/free-photo/crumpled-white-aluminium-foil-background_23-2148722090.jpg?w=2000"
+  alt="background-image">
+
+<div class="container d-flex">
+    <div class="card text-center me-auto ms-auto mt-4" style="width: 12rem;">
+        <img style="size: cover;" class="card-img-top" src="https://media.motoservices.com/media/cache/slider_full/media/gallery/13485/KAWASAKI-Z900.jpg" alt="Portrait type">
+        <div class="card-body">
+          <h5 class="card-title">Modèle Roadster</h5>
+          <a (click)="getType('roadster')" class="btn btn-primary">Allez sur la page consacrée</a>
+        </div>
+    </div>
+    
+    <div class="card text-center me-auto ms-auto mt-4" style="width: 12rem;">
+        <img style="size: cover;" class="card-img-top" src="https://tse2.mm.bing.net/th?id=OIP.PJ5Sr1nkBjXsHEKXdNW_LwHaE7" alt="Portrait type">
+        <div class="card-body">
+          <h5 class="card-title">Modèle Custom</h5>
+          <a (click)="getType('custom')" class="btn btn-primary">Allez sur la page consacrée</a>
+        </div>
+    </div>
+    
+    <div class="card text-center me-auto ms-auto mt-4" style="width: 12rem;">
+        <img style="size: cover;" class="card-img-top" src="https://images.caradisiac.com/images/9/1/3/4/119134/S1-partir-en-vadrouille-avec-quel-type-de-moto-416143.jpg" alt="Portrait type">
+        <div class="card-body">
+          <h5 class="card-title">Modèle Sportif</h5>
+          <a (click)="getType('sportive')" class="btn btn-primary">Allez sur la page consacrée</a>
+        </div>
+    </div>
+    
+    <div class="card text-center me-auto ms-auto mt-4" style="width: 12rem;">
+        <img style="size: cover;" class="card-img-top" src="https://motard-adventure.com/wp-content/uploads/2017/09/CRF250Rally.jpg" alt="Portrait type">
+        <div class="card-body">
+          <h5 class="card-title">Modèle Enduro</h5>
+          <a (click)="getType('enduro')" class="btn btn-primary">Allez sur la page consacrée</a>
+        </div>
+    </div>
+
+    
+</div>
+
+<div *ngIf="display == 'block'" class="container" style="opacity: 1;">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Marque</th>
+          <th scope="col">Type</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Cylindrée</th>
+          <th scope="col">Vente Flash</th>
+          <th scope="col">Année</th>
+          <th scope="col">Kilomètres</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let moto of motoTable">
+  
+          <th scope="row">{{moto.nom}}</th>
+          <td class="td-image"><img style="max-height: 75px; max-width: 75px; z-index: 20; opacity: 1;"
+              src="{{moto.image}}" alt="Portrait de la moto"></td>
+          <td>{{moto.marque}}</td>
+          <td>{{moto.type}}</td>
+          <td>{{moto.prix}}</td>
+          <td>{{moto.cylindree}}</td>
+  
+          <td>
+            <p *ngIf="moto.venteFlash==true">Oui</p>
+            <p *ngIf="moto.venteFlash==false">Non</p>
+          </td>
+  
+          <td>{{moto.annee}}</td>
+          <td>{{moto.kilometres}}</td>
+          <td>
+            <div class="d-flex flex-column">
+              <button [routerLink]="['/'+moto.id]" class="btn btn-success" style="z-index: 20; opacity: 1;">En
+                détail</button>
+            </div>
+          </td>
+        </tr>
+  
+      </tbody>
+    </table>
+  </div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-6 mt-4">
+        <button type="button" class="btn btn-warning" [routerLink]="['/']">Retour à la page d'accueil</button>
+      </div>
+    </div>
+</div>
