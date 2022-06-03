@@ -5,8 +5,11 @@
 }
 
 h1,
+h2,
 th,
-td {
+td,
+button,
+p {
   font-family: 'jetBrain';
 }
 

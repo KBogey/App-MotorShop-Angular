@@ -4,8 +4,8 @@
 <div class="card text-center me-auto ms-auto mt-4" style="width: 30rem;">
     <img class="card-img-top" src="{{moto.image}}" alt="Portrait en détail">
     <div class="card-body">
-      <h5 class="card-title">{{moto.nom}}</h5>
-      <p class="card-text">{{moto.nom}}, une {{moto.cylindree}} cylindrée, de type {{moto.type}}, <span *ngIf="moto.venteFlash==false"> non-</span>disponible en vente flash, est au modique prix de {{moto.prix}} euros, avec un compteur affichant les {{moto.kilometres}} kms, manufacturée en {{moto.annee}}. </p>
+      <h5 class="card-title"><strong><i>{{moto.nom}}</i></strong></h5>
+      <p class="card-text"><strong>{{moto.nom}}</strong>, une {{moto.cylindree}} cylindrée, de type {{moto.type}}, <span *ngIf="moto.venteFlash==false"> non-</span>disponible en vente flash, est au modique prix de <strong><i>{{moto.prix}}</i> euros</strong>, avec un compteur affichant les {{moto.kilometres}} kms, manufacturée en {{moto.annee}}. </p>
       <a [routerLink]="['/']" class="btn btn-primary">Retour à la page d'accueil</a>
     </div>
 </div>

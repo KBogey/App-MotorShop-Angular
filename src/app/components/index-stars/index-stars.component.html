@@ -6,14 +6,20 @@
 
   <div class="d-flex align-items-center">
     <img styel="max-width: 50px; height: auto;" src="../../../assets/th-removebg-preview.png" alt="eagle motors">
-    <h1 style="font-weight: 900;" class="text-warning display-1">Eagle motors</h1>
+    <h1 style="font-weight: 1000;" class="text-danger display-1">Eagle motors</h1>
   </div>
 
-  <button [routerLink]="['/marque']" class="btn btn-warning me-1">Triée par marque</button>
-  <button [routerLink]="['/type']" class="btn btn-warning ms-1 me-1">Triée par type</button>
-  <button [routerLink]="['/list']" class="btn btn-warning ms-1">Liste complète</button>
+  <div class="d-flex justify-content-between">
+    
+      <button [routerLink]="['/marque']" class="btn btn-warning me-1 my-5">Triée par marque</button>
+      <button [routerLink]="['/type']" class="btn btn-warning ms-1 me-1 my-5">Triée par type</button>
+      <button [routerLink]="['/list']" class="btn btn-warning ms-1 my-5">Liste complète</button>
+    
+    <h2 style="font-weight: 600; font-style: italic;" class="text-warning display-4 mt-4 mb-4 text-end">Produits stars</h2>
+  </div>
 
   <table class="table">
+    
     <thead>
       <tr>
         <th scope="col">Nom</th>
