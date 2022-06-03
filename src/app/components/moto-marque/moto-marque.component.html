@@ -1,99 +1,103 @@
-<img class="background" src="https://img.freepik.com/free-photo/crumpled-white-aluminium-foil-background_23-2148722090.jpg?w=2000"
+<img class="background"
+  src="https://img.freepik.com/free-photo/crumpled-white-aluminium-foil-background_23-2148722090.jpg?w=2000"
   alt="background-image">
 
-<div class="container d-flex">
-    <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
-        <img style="size: cover;" class="card-img-top" src="https://www.1min30.com/wp-content/uploads/2018/05/Embleme-KTM.jpg" alt="Portrait en détail">
-        <div class="card-body">
-          <h5 class="card-title">KTM</h5>
-          <a (click)="getMarque('ktm')" class="btn btn-primary">Allez sur la page consacrée</a>
-        </div>
-    </div>
-    
-    <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
-        <img style="size: cover;" class="card-img-top" src="https://ak.picdn.net/shutterstock/videos/34785397/thumb/8.jpg" alt="Portrait en détail">
-        <div class="card-body">
-          <h5 class="card-title">Yamaha</h5>
-          <a (click)="getMarque('yamaha')" class="btn btn-primary">Allez sur la page consacrée</a>
-        </div>
-    </div>
-    
-    <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
-        <img style="size: cover;" class="card-img-top" src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/news/th_black_river_mark.jpg" alt="Portrait en détail">
-        <div class="card-body">
-          <h5 class="card-title">Kawasaki</h5>
-          <a (click)="getMarque('kawasaki')" class="btn btn-primary">Allez sur la page consacrée</a>
-        </div>
-    </div>
-    
-    <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
-        <img style="size: cover;" class="card-img-top" src="https://images2.alphacoders.com/965/965572.jpg" alt="Portrait en détail">
-        <div class="card-body">
-          <h5 class="card-title">Harley Davidson</h5>
-          <a (click)="getMarque('Harley Davidson')" class="btn btn-primary">Allez sur la page consacrée</a>
-        </div>
-    </div>
+<div class="d-flex align-items-center">
+  <img styel="max-width: 50px; height: auto;" src="../../../assets/th-removebg-preview.png" alt="eagle motors">
+  <h1 style="font-weight: 900;" class="text-danger display-4">Référencée par marque</h1>
+</div>
 
-    
+<div class="container d-flex">
+  <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
+    <img style="size: cover;" class="card-img-top"
+      src="https://www.1min30.com/wp-content/uploads/2018/05/Embleme-KTM.jpg" alt="Portrait en détail">
+    <div class="card-body">
+      <h5 class="card-title">KTM</h5>
+      <a (click)="getMarque('ktm')" class="btn btn-primary">Allez sur la page consacrée</a>
+    </div>
+  </div>
+
+  <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
+    <img style="size: cover;" class="card-img-top" src="https://ak.picdn.net/shutterstock/videos/34785397/thumb/8.jpg"
+      alt="Portrait en détail">
+    <div class="card-body">
+      <h5 class="card-title">Yamaha</h5>
+      <a (click)="getMarque('yamaha')" class="btn btn-primary">Allez sur la page consacrée</a>
+    </div>
+  </div>
+
+  <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
+    <img style="size: cover;" class="card-img-top"
+      src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/news/th_black_river_mark.jpg" alt="Portrait en détail">
+    <div class="card-body">
+      <h5 class="card-title">Kawasaki</h5>
+      <a (click)="getMarque('kawasaki')" class="btn btn-primary">Allez sur la page consacrée</a>
+    </div>
+  </div>
+
+  <div class="card text-center me-auto ms-auto mt-4" style="width: 10rem;">
+    <img style="size: cover;" class="card-img-top" src="https://images2.alphacoders.com/965/965572.jpg"
+      alt="Portrait en détail">
+    <div class="card-body">
+      <h5 class="card-title">Harley Davidson</h5>
+      <a (click)="getMarque('Harley Davidson')" class="btn btn-primary">Allez sur la page consacrée</a>
+    </div>
+  </div>
+
+
 </div>
 
 <div *ngIf="display == 'block'" class="container" style="opacity: 1;">
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Nom</th>
-          <th scope="col">Photo</th>
-          <th scope="col">Marque</th>
-          <th scope="col">Type</th>
-          <th scope="col">Prix</th>
-          <th scope="col">Cylindrée</th>
-          <th scope="col">Vente Flash</th>
-          <th scope="col">Année</th>
-          <th scope="col">Kilomètres</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let moto of motoTable">
-  
-          <th scope="row">{{moto.nom}}</th>
-          <td class="td-image"><img style="max-height: 75px; max-width: 75px; z-index: 20; opacity: 1;"
-              src="{{moto.image}}" alt="Portrait de la moto"></td>
-          <td>{{moto.marque}}</td>
-          <td>{{moto.type}}</td>
-          <td>{{moto.prix}}</td>
-          <td>{{moto.cylindree}}</td>
-  
-          <td>
-            <p *ngIf="moto.venteFlash==true">Oui</p>
-            <p *ngIf="moto.venteFlash==false">Non</p>
-          </td>
-  
-          <td>{{moto.annee}}</td>
-          <td>{{moto.kilometres}}</td>
-          <td>
-            <div class="d-flex flex-column">
-              <button [routerLink]="['/'+moto.id]" class="btn btn-success" style="z-index: 20; opacity: 1;">En
-                détail</button>
-            </div>
-          </td>
-        </tr>
-  
-      </tbody>
-    </table>
-  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Type</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Cylindrée</th>
+        <th scope="col">Vente Flash</th>
+        <th scope="col">Année</th>
+        <th scope="col">Kilomètres</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let moto of motoTable">
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-6 mt-4">
-        <button type="button" class="btn btn-warning" [routerLink]="['/']">Retour à la page d'accueil</button>
-      </div>
-    </div>
+        <th scope="row">{{moto.nom}}</th>
+        <td class="td-image"><img style="max-height: 75px; max-width: 75px; z-index: 20; opacity: 1;"
+            src="{{moto.image}}" alt="Portrait de la moto"></td>
+        <td>{{moto.marque}}</td>
+        <td>{{moto.type}}</td>
+        <td>{{moto.prix}}</td>
+        <td>{{moto.cylindree}}</td>
+
+        <td>
+          <p *ngIf="moto.venteFlash==true">Oui</p>
+          <p *ngIf="moto.venteFlash==false">Non</p>
+        </td>
+
+        <td>{{moto.annee}}</td>
+        <td>{{moto.kilometres}}</td>
+        <td>
+          <div class="d-flex flex-column">
+            <button [routerLink]="['/'+moto.id]" class="btn btn-success" style="z-index: 20; opacity: 1;">En
+              détail</button>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>
 
-
-
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-6 mt-4">
+      <button type="button" class="btn btn-warning" [routerLink]="['/']">Retour à la page d'accueil</button>
+    </div>
+  </div>
+</div>
